@@ -12,6 +12,9 @@ abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,cap
 
 /* defaults */
 
+html, body {
+  /*overflow-x: hidden;*/
+}
 body {
 	background: #fff;
 	color: #000;
@@ -50,20 +53,10 @@ header {
 	padding: 20px;
 	color: #fff;
 	max-width: none;
-	transform: rotate(-90deg);
-	transform-origin: 100% 0;
-	position: fixed;
-	left: 0;
-	top: 0;
-	margin-left: -100vh;
-	max-width: calc(100vh - 40px);
 }
 header p, header h1 {
 	display: inline;
 	line-height: 20px;
-}
-header p {
-	
 }
 header h1 {
 	font-family: "jaf-peacock", sans-serif;
@@ -74,11 +67,22 @@ header p:last-of-type {
 header p a {
 	color: #fff;
 }
+@media (min-width: 800px) {
+	header { 	
+		transform: rotate(-90deg);
+		transform-origin: 100% 0;
+		position: fixed;
+		left: 0;
+		top: 0;
+		margin-left: -100vh;
+		max-width: calc(100vh - 40px);
+	}
+}
 
 /* timeline */
 .canvas-container {
 	position: relative;
-	max-width: 780px;
+	width: 780px;
 	margin: 0 auto;
 }
 header p {
@@ -91,12 +95,50 @@ canvas {
 .timeline-wrapper {
 	text-align: center;
 	margin: 0 auto;
-	padding: 100px 0;
+	padding: 140px 0 0 0;
 }
 .timeline-element {
 	margin: 0 auto 140px auto;
 	position: relative;
 }
+
+
+.timeline-element:after {
+	content: "↓";
+	position: absolute;
+	bottom: -100px;
+	color: red;
+	font-size: 2em;
+	margin-left: -10px;
+}
+.timeline-eighth-element:after {
+	display: none;
+}
+.timeline-third-element:after {
+	top: 260px;	
+	left: 160px;
+	transform: rotate(45deg);
+	bottom: auto;
+}
+.timeline-third-element:before {
+	content: "↓";
+	position: absolute;
+	color: red;
+	top: 260px;	
+	right: 160px;
+	transform: rotate(-45deg);
+	bottom: auto;
+	font-size: 2em;
+}
+.timeline-fourth-element:after {
+	transform: rotate(-45deg);
+}
+.timeline-fifth-element:after {
+	transform: rotate(45deg);
+}
+
+
+
 .timeline-child {
 	margin-top: 140px;
 }
