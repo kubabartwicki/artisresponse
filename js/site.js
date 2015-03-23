@@ -118,6 +118,15 @@ var Site = {
 
 		};
 
+		function centerContainer() {
+			var canvasContainer = $('.canvas-container'),
+				headerWidth = $('header').height();
+			canvasContainer.css('left', headerWidth);
+		}
+
+		centerContainer();
+		$(window).resize(function() { centerContainer(); });
+
 
 
 	}
