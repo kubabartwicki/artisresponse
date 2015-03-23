@@ -31,7 +31,7 @@ var Site = {
 			var canvasHtml = $('#canvas');
 			var ctx = canvas.getContext('2d');
 			
-			var offsetSource = source.position();
+			var offsetSource = source.offset();
 			var offsetTarget = target.offset();
 			var x1,
 				y1,
@@ -41,28 +41,28 @@ var Site = {
 			if ( source.hasClass('timeline-third-element') && target.hasClass('timeline-fourth-element') ) {
 				
 				x1 = source.width()/2 - 40;
-				y1 = offsetSource.top + source.height()/2 - 40; 
-				x2 = target.width()/2 - offsetTarget.left;
+				y1 = offsetSource.top + source.height()/4; 
+				x2 = target.width()/2;
 				y2 = offsetTarget.top - 80;
 
 			} else if ( source.hasClass('timeline-third-element') && target.hasClass('timeline-fifth-element') ) {
 				
 				x1 = source.width()/2 + 40;
-				y1 = offsetSource.top + source.height()/2 - 40; 
-				x2 = offsetTarget.left - target.width()/2;
+				y1 = offsetSource.top + source.height()/4; 
+				x2 = canvasHtml.width() - target.width()/2;
 				y2 = offsetTarget.top - 80;
 
 			} else if ( source.hasClass('timeline-fourth-element') && target.hasClass('timeline-sixth-element') ) {
 				
-				x1 = offsetSource.left + source.width()/2;
-				y1 = offsetSource.top + source.height(); 
+				x1 = source.width()/2;
+				y1 = offsetSource.top + source.height() - 80; 
 				x2 = target.width()/2 - 40;
 				y2 = offsetTarget.top - 80;
 
 			} else if ( source.hasClass('timeline-fifth-element') && target.hasClass('timeline-sixth-element') ) {
 				
-				x1 = offsetSource.left + source.width()/2;
-				y1 = offsetSource.top + source.height(); 
+				x1 = canvasHtml.width() - source.width()/2;
+				y1 = offsetSource.top + source.height() - 80; 
 				x2 = target.width()/2 + 40;
 				y2 = offsetTarget.top - 80;
 
