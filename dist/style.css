@@ -55,6 +55,12 @@ header {
 header h1 {
 	font-family: "jaf-peacock", sans-serif;
 }
+header p:last-of-type {
+	margin-top: 20px;
+}
+header p a {
+	color: #fff;
+}
 @media (min-width: 1000px) {
 	header {
 		position: absolute;
@@ -64,15 +70,21 @@ header h1 {
 }
 
 /* timeline */
+canvas {
+	left: 0;
+}
 .timeline-wrapper {
 	text-align: center;
-	margin: 60px 0;
+	margin: 80px auto;
+	position: relative;
+	max-width: 780px;
 }
 .timeline-element {
-	margin-bottom: 60px;
+	margin: 0 auto 100px auto;
+	position: relative;
 }
 .timeline-child {
-	margin-top: 60px;
+	margin-top: 100px;
 }
 .timeline-child .timeline-element:nth-child(1) {
 	margin-left: -120px;
@@ -82,6 +94,7 @@ header h1 {
 }
 .timeline-active {
 	font-family: "jaf-peacock", sans-serif;
+	color: red;
 }
 @media (min-width: 550px) {
 	.timeline-child .timeline-element {
@@ -90,8 +103,16 @@ header h1 {
 	}
 	.timeline-child .timeline-element:nth-child(1) {
 		margin-right: 80px;
+		margin-left: 0;
 	}
 	.timeline-child .timeline-element:nth-child(2) {
 		margin-left: 80px;
+		margin-right: 0;
 	}	
+}
+.timeline-element p {
+	margin: 10px auto 0 auto;
+	max-width: 300px;
+	text-align: left;
+	font-size: 1em;
 }
