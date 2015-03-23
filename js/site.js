@@ -5,17 +5,21 @@ var Site = {
 		$(window).resize(function() { respond(); });
 		
 		function draw(source, target){
+
+			var brush = new Image();
+			brush.src = 'http://www.tricedesigns.com/wp-content/uploads/2012/01/brush2.png';
+
 			var canvas = document.getElementById('canvas');
 			var canvasHtml = $('#canvas');
 			var ctx = canvas.getContext('2d');
 			
-			var offsetSource = source.position();
-			var x1 = source.width()/2;
-			var y1 = offsetSource.top + source.height(); 
+			var offsetSource = source.offset();
+			var x1 = canvasHtml.width()/2;
+			var y1 = offsetSource.top + source.height() + 20; 
 			
 			var offsetTarget = target.offset();
-			var x2 = target.width()/2;
-			var y2 = offsetTarget.top - 80;
+			var x2 = canvasHtml.width()/2;
+			var y2 = offsetTarget.top - 20;
 			
 			var width = $(canvas).parent().width();
 			
@@ -23,6 +27,8 @@ var Site = {
 			ctx.moveTo(x1,y1);
 			ctx.lineTo(x2,y2);	
 			ctx.strokeStyle = '#000000';
+			ctx.lineWidth = 5;
+  			ctx.lineJoin = ctx.lineCap = 'round';
 			ctx.stroke();
 		}
 
@@ -40,31 +46,31 @@ var Site = {
 
 			if ( source.hasClass('timeline-third-element') && target.hasClass('timeline-fourth-element') ) {
 				
-				x1 = source.width()/2 - 40;
-				y1 = offsetSource.top + source.height()/4; 
+				x1 = canvasHtml.width()/2 - 40;
+				y1 = offsetSource.top + source.height()/2 - 60; 
 				x2 = target.width()/2;
-				y2 = offsetTarget.top - 80;
+				y2 = offsetTarget.top - 20;
 
 			} else if ( source.hasClass('timeline-third-element') && target.hasClass('timeline-fifth-element') ) {
 				
 				x1 = source.width()/2 + 40;
-				y1 = offsetSource.top + source.height()/4; 
+				y1 = offsetSource.top + source.height()/2 - 60; 
 				x2 = canvasHtml.width() - target.width()/2;
-				y2 = offsetTarget.top - 80;
+				y2 = offsetTarget.top - 20;
 
 			} else if ( source.hasClass('timeline-fourth-element') && target.hasClass('timeline-sixth-element') ) {
 				
 				x1 = source.width()/2;
-				y1 = offsetSource.top + source.height() - 80; 
+				y1 = offsetSource.top + source.height() + 20; 
 				x2 = target.width()/2 - 40;
-				y2 = offsetTarget.top - 80;
+				y2 = offsetTarget.top - 20;
 
 			} else if ( source.hasClass('timeline-fifth-element') && target.hasClass('timeline-sixth-element') ) {
 				
 				x1 = canvasHtml.width() - source.width()/2;
-				y1 = offsetSource.top + source.height() - 80; 
+				y1 = offsetSource.top + source.height() + 20; 
 				x2 = target.width()/2 + 40;
-				y2 = offsetTarget.top - 80;
+				y2 = offsetTarget.top - 20;
 
 			};
 
@@ -74,6 +80,8 @@ var Site = {
 			ctx.beginPath();
 			ctx.moveTo(x1,y1);
 			ctx.lineTo(x2,y2);	
+			ctx.lineWidth = 5;
+  			ctx.lineJoin = ctx.lineCap = 'round';
 			ctx.strokeStyle = '#000000';
 			ctx.stroke();
 		}

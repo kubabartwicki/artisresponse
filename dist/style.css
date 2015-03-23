@@ -45,12 +45,27 @@ img {
 }
 
 /* header */
-header { 
-	max-width: 300px;
-	background: linear-gradient(to right, red 0%,#ffffff 100%);
+header { 	
+	background: red;
 	padding: 20px;
 	color: #fff;
 	max-width: none;
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	-webkit-transform-origin: 100% 0;
+	transform-origin: 100% 0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin-left: -100vh;
+	max-width: calc(100vh - 40px);
+}
+header p, header h1 {
+	display: inline;
+	line-height: 20px;
+}
+header p {
+	
 }
 header h1 {
 	font-family: "jaf-peacock", sans-serif;
@@ -61,30 +76,31 @@ header p:last-of-type {
 header p a {
 	color: #fff;
 }
-@media (min-width: 1000px) {
-	header {
-		position: absolute;
-		top: 0;
-		max-width: 300px;
-	}
-}
 
 /* timeline */
+.canvas-container {
+	position: relative;
+	max-width: 780px;
+	margin: 0 auto;
+}
+header p {
+	max-width: none;
+}
 canvas {
 	left: 0;
+	top: 0;
 }
 .timeline-wrapper {
 	text-align: center;
-	margin: 80px auto;
-	position: relative;
-	max-width: 780px;
+	margin: 0 auto;
+	padding: 100px 0;
 }
 .timeline-element {
-	margin: 0 auto 100px auto;
+	margin: 0 auto 140px auto;
 	position: relative;
 }
 .timeline-child {
-	margin-top: 100px;
+	margin-top: 140px;
 }
 .timeline-child .timeline-element:nth-child(1) {
 	margin-left: -120px;
