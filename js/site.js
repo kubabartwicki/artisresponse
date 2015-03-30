@@ -20,6 +20,6 @@ var Site = {
 	}
 }
 
-$(document).ready(function() {
+$(window).load(function() {
 	Site.init();
 })
