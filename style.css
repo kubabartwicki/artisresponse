@@ -118,19 +118,19 @@ canvas {
 	display: none;
 }
 .timeline-third-element:after {
-	top: 260px;	
+	top: auto;
+	bottom: 480px;
 	left: 160px;
 	transform: rotate(45deg);
-	bottom: auto;
 }
 .timeline-third-element:before {
 	content: "↓";
 	position: absolute;
 	color: red;
-	top: 260px;	
+	top: auto;
+	bottom: 480px;
 	right: 160px;
 	transform: rotate(-45deg);
-	bottom: auto;
 	font-size: 2em;
 }
 .timeline-fourth-element:after {
@@ -152,6 +152,7 @@ canvas {
 .timeline-child .timeline-element {
 	display: inline-block;
 	margin-bottom: 0;
+	vertical-align: top;
 }
 .timeline-child .timeline-element:nth-child(1) {
 	margin-right: 80px;
@@ -162,7 +163,7 @@ canvas {
 	margin-right: 0;
 }
 .timeline-element p {
-	margin: 10px auto 0 auto;
+	margin: 20px auto 0 auto;
 	max-width: 300px;
 	text-align: left;
 	font-size: 1em;
